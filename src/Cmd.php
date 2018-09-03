@@ -14,6 +14,7 @@ class Cmd
     const CODE_ERR = 500;
     const CODE_NO_CHANGE = 201;
     const CODE_NOT_FOUND = 404;
+    const CODE_NO_PERMISSION = 403;
     const CODE_REDIRECT_TMP = 302;
     const CODE_REDIRECT_PERMANENT = 301;
 
@@ -24,6 +25,24 @@ class Cmd
     public function __construct($data = array(), $message = "OK", $code = 200)
     {
         $this->ok($data, $message, $code);
+    }
+
+    /**
+     * @return $this
+     */
+    public function markAsError()
+    {
+        $this->code = self::CODE_ERR;
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    public function markAsOk()
+    {
+        $this->code = self::CODE_OK;
+        return $this;
     }
 
     /**
