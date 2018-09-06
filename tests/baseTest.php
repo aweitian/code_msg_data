@@ -34,4 +34,9 @@ class baseTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('Error', $demo->getMessage());
     }
 
+    public function testToString()
+    {
+        $demo = new \Aw\Cmd();
+        print $demo;
+    }
 }

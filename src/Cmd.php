@@ -204,4 +204,12 @@ class Cmd
         $this->data = $data;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getJson();
+    }
 }
