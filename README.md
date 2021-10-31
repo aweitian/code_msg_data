@@ -4,4 +4,7 @@
 >composer require aweitian/code_msg_data
 >
 
-
+## 示例
+```php
+Cmd::make([1,2,3])
+```

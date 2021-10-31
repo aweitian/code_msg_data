@@ -131,10 +131,14 @@ class Cmd
      */
     public function get()
     {
+        $data = $this->data;
+        if (is_object($data) && method_exists($data,'toArray')) {
+            $data = $data->toArray();
+        }
         return array(
             'code' => $this->code,
             'message' => $this->message,
-            'data' => $this->data
+            'data' => $data
         );
     }
 
