@@ -28,6 +28,17 @@ class Cmd
     }
 
     /**
+     * @param array $data
+     * @param string $message
+     * @param int $code
+     * @return Cmd
+     */
+    public static function make($data = array(), $message = "OK", $code = 200)
+    {
+        return new self($data, $message, $code);
+    }
+
+    /**
      * @return $this
      */
     public function markAsError()
